@@ -9,14 +9,8 @@ model User {
   // Optional for WebAuthn support
   Authenticator Authenticator[]
 
-  createdAt         DateTime     @default(now())
-  updatedAt         DateTime     @updatedAt
-  Tennant           Tennant[]
-  Facility          Facility[]
-  Appartment        Appartment[] @relation(name: "appartmentMembers")
-  CreatedAppartment Appartment[] @relation(name: "createdAppartments")
-  Report            Report[]
-  Booking           Booking[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model Account {
