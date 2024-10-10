@@ -1,0 +1,10 @@
+model Booking {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  createdBy User     @relation(fields: [userId], references: [id])
+  userId    String
+  startTime DateTime
+  endTime   DateTime
+  comment   String?
+}
